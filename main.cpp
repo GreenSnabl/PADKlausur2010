@@ -10,7 +10,7 @@ void test(bool testresult)
 
 int main() {
     
-    /*Library lib;
+    Library lib;
     Book* book1 = lib.addBook("Breymann", "C++");
     Book* book2 = lib.addBook("Gosling", "Java");
     Book* book3 = lib.addBook("Goldberg", "Smalltalk");
@@ -18,14 +18,12 @@ int main() {
     Customer* customer2 = lib.addCustomer("Müller");
     Loan* loan1 = lib.borrow(customer1, book1);
     Loan* loan2 = lib.borrow(customer1, book2);
-    */
-    Book b("Breymann", "C++");
-    std::cout << b.getAuthor();
     
-    //test(loan1->getBook()->getAuthor() == "Breymann");
-    //test(loan1->getBook()->getTitle() == "C++");
-    //test(loan1->getCustomer()->getName() == "Huber");
-    //test(lib.getBorrower(book1) == customer1);
+    
+    test(loan1->getBook()->getAuthor() == "Breymann");
+    test(loan1->getBook()->getTitle() == "C++");
+    test(loan1->getCustomer()->getName() == "Huber");
+    test(lib.getBorrower(book1) == customer1);
     
 
     return 0;

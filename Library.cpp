@@ -2,24 +2,21 @@
 
 Book* Library::addBook(string author, string title)
 {
-    Book b(author, title);
-    Book* bp = &b;
+    Book* bp = new Book(author, title);
     books_.push_back(bp);
     return bp;
 }
 
 Customer* Library::addCustomer(string name)
 {
-    Customer c(name);
-    Customer* cp = &c;
+    Customer* cp = new Customer(name);
     customers_.push_back(cp);
     return cp;
 }
 
 Loan* Library::borrow(Customer* customer, Book* book)
 {
-    Loan loan(customer, book);
-    Loan* lp = &loan;
+    Loan* lp = new Loan(customer, book);
     loans_.push_back(lp);
     return lp;
 }
