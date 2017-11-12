@@ -8,8 +8,10 @@ void test(bool testresult)
 }
 
 
+
 int main() {
     
+
     Library lib;
     Book* book1 = lib.addBook("Breymann", "C++");
     Book* book2 = lib.addBook("Gosling", "Java");
@@ -24,6 +26,15 @@ int main() {
     test(loan1->getBook()->getTitle() == "C++");
     test(loan1->getCustomer()->getName() == "Huber");
     test(lib.getBorrower(book1) == customer1);
+    test(lib.getBorrower(book2) == customer1);
+    test(lib.getBorrower(book3) == NULL);
+    test(lib.getBorrowedBooks(customer1).size() == 2);
+    test(lib.getBorrowedBooks(customer2).size() == 0);
+    test(lib.isBorrowed(book1));
+    test(lib.isBorrowed(book2));
+    test(!lib.isBorrowed(book3));
+    test(lib.getAvailableBooks().size() == 1);
+    
     
 
     return 0;
